@@ -21,6 +21,11 @@
   &__main {
     width: 100%;
     height: 100%;
+    padding: $spacing-xxlarge;
+
+    @media screen and (max-width: 600px) {
+      padding: $dim-normal;
+    }
   }
 }
 
