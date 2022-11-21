@@ -2,7 +2,6 @@
 
 <template>
   <div>
-    reza sadeghi
   </div>
 </template>
 
