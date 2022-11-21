@@ -6,7 +6,11 @@ export const routes: Array<RouteRecordRaw> = [{
   children: [
     {
       path: '',
-      component: () => import('@/views/HomeView.vue')
+      component: () => import('@/views/MovieView.vue')
+    },
+    {
+      path: 'movie/:id',
+      component: () => import('@/views/MovieDetailView.vue')
     }
   ]
 }]

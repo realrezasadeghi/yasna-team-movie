@@ -22,11 +22,8 @@ export interface ListMovieModel {
   total_pages: number;
 }
 
-export interface ListMovieBySearchDateDto {
-  releaseDateEnd: string,
-  releaseDateStart: string,
-}
-
-export interface ListMovieByPaginationDto {
-  page: number
+export interface ListMovieDto {
+  page?: number,
+  releaseDateEnd?: string,
+  releaseDateStart?: string,
 }

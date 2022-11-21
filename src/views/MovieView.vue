@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { Movie } from '@/core'
 import { useGetListMovieAPI } from '@/composables/movie'
 import MovieList from '@/components/modules/movie/MovieList.vue'
 
-const { data } = useGetListMovieAPI()
+const currentPage = ref<number>(1)
+const { data } = useGetListMovieAPI({ page: currentPage.value })
 
 const movies = computed(() => {
   const results: Array<Movie> = data?.value?.results?.map((item) => ({
