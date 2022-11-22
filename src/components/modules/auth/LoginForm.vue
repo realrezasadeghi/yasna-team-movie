@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
 import { useStore } from 'vuex'
+import { storage } from '@/utils'
+import { useRouter } from 'vue-router'
 import { LoginInterfaceDto } from '@/api'
 import BaseTextField from '@/components/base/BaseTextField.vue'
 import { useCreateSessionIdAPI, useGetRequestTokenAPI, useLoginAPI } from '@/composables'
-import { useRouter } from 'vue-router'
 
 const user = reactive<LoginInterfaceDto>({
   username: 'rezasadeghi',
@@ -26,6 +27,11 @@ const { mutate: createSessionId } = useCreateSessionIdAPI({
 const { mutate: loginUser } = useLoginAPI({
   onSuccess: (data) => {
     createSessionId({ request_token: data.request_token })
+    const payload = {
+      request_token: data.request_token,
+      expires_at: data.expires_at
+    }
+    storage.add('user', JSON.stringify(payload))
   }
 })
 const { data: dataRequestToken } = useGetRequestTokenAPI()

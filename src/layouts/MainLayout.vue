@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import TheHeader from '@/components/layout/TheHeader.vue'
+</script>
 
 <template>
   <div class="main-layout">
@@ -40,12 +42,3 @@
   transform: scale(0.9);
 }
 </style>
-<script lang="ts">
-import TheHeader from '@/components/layout/TheHeader.vue'
-
-export default {
-  components: {
-    TheHeader
-  }
-}
-</script>
