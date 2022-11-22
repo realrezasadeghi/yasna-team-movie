@@ -4,6 +4,7 @@ import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
 import { useGetDetailsAccountAPI } from '@/composables'
 import { InformationStore } from '@/store/modules/user/interface'
+import { storage } from '@/utils'
 
 const store = useStore()
 const router = useRouter()
@@ -27,6 +28,7 @@ const onClickLogout = () => {
     path: '/login',
     replace: true
   })
+  storage.remove('user')
 }
 </script>
 

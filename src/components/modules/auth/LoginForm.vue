@@ -24,7 +24,10 @@ const { mutate: createSessionId } = useCreateSessionIdAPI({
     store.dispatch('addSessionId', { sessionId: data.session_id })
   }
 })
-const { mutate: loginUser } = useLoginAPI({
+const {
+  mutate: loginUser,
+  isLoading
+} = useLoginAPI({
   onSuccess: (data) => {
     createSessionId({ request_token: data.request_token })
     const payload = {
@@ -50,7 +53,7 @@ const onSubmitLogin = () => {
     <form class="login-form__body" @submit.prevent="onSubmitLogin">
       <base-text-field v-model="user.username" label="Username"/>
       <base-text-field v-model="user.password" label="Password"/>
-      <button type="submit" class="login-form__submit">Submit</button>
+      <button type="submit" class="login-form__submit" :disabled="isLoading">Submit</button>
     </form>
   </div>
 </template>
