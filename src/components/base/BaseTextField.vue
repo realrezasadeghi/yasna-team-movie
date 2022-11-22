@@ -55,19 +55,19 @@ const onClick = () => {
   position: relative;
   box-sizing: border-box;
   padding: $spacing-xsmall;
-  border: 1px solid #bbbbbb;
   border-radius: $dim-xxsmall;
   transition: all 0.2s ease-in;
+  border: 1px solid $color-secondary;
 
   &:hover {
-    border-color: cornflowerblue;
+    border-color: $color-primary;
   }
 
   &__label {
     top: $dim-normal;
-    color: #bbbbbb;
     position: absolute;
     font-size: $dim-xsmall;
+    color: $color-secondary;
     transition: all 0.2s ease-in;
     background-color: transparent;
     padding-inline: $spacing-xsmall;
@@ -88,14 +88,14 @@ const onClick = () => {
   }
 
   &--label-active {
-    color: cornflowerblue;
-    background-color: white;
+    color: $color-primary;
     top: calc(-1 * $dim-xsmall);
+    background-color: $color-white;
   }
 
   &--label-value {
-    background-color: white;
     top: calc(-1 * $dim-xsmall);
+    background-color: $color-white;
   }
 }
 </style>
