@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Movie } from '@/core'
 import { computed, defineProps } from 'vue'
 
 interface Props {
