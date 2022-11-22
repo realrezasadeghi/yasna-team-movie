@@ -4,11 +4,10 @@ import { MovieDetailDto, MovieDetailModel, MovieService } from '@/api'
 
 type TError = ErrorType;
 type TData = MovieDetailModel;
-type TVariable = MovieDetailDto;
 
-export const UseGetMovieDetailByIdAPI = (request: MovieDetailDto) => {
+export const useGetMovieDetailByIdAPI = (request: MovieDetailDto) => {
   const service = new MovieService()
-  return useQuery<TData, TError, TVariable>(
+  return useQuery<TData, TError>(
     [QueryKeyEnum.GET_MOVIE_DETAIL_BY_ID, request.movieId],
     async () => await service.getMovieDetailById(request))
 }

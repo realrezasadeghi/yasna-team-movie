@@ -20,15 +20,13 @@ const image = computed(() => `https://image.tmdb.org/t/p/original${props.poster}
     <img :alt="title" :src="image" class="movie-item__image"/>
     <div class="movie-item__body">
       <div class="movie-item__tags"></div>
-      <router-link :to="link" class="movie-item__title movie-item--text">{{ title }}</router-link>
-      <p class="movie-item__subtitle movie-item--text">
-        {{ subtitle }}
-      </p>
+      <router-link :to="link" class="movie-item__title movie-item--text" v-text="title"/>
+      <p class="movie-item__subtitle movie-item--text" v-text="subtitle"/>
       <div class="movie-item__info">
         <img :alt="name" :src="image" class="movie-item__avatar"/>
         <div class="movie-item__info-body">
-          <p class="movie-item__info-name movie-item--text">{{ name }}</p>
-          <p class="movie-item__info-created">{{ created }}</p>
+          <p class="movie-item__info-name movie-item--text" v-text="name"/>
+          <p class="movie-item__info-created" v-text="created"/>
         </div>
       </div>
     </div>
@@ -39,7 +37,7 @@ const image = computed(() => `https://image.tmdb.org/t/p/original${props.poster}
 .movie-item {
   width: 100%;
   overflow: hidden;
-  background-color: #fff;
+  background-color: $color-white;
   border-radius: $dim-xsmall;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
   @include flex(column, flex-start, flex-start);
@@ -65,7 +63,7 @@ const image = computed(() => `https://image.tmdb.org/t/p/original${props.poster}
   }
 
   &__title {
-    color: black;
+    color: $color-black;
     font-weight: bold;
     text-decoration: none;
     letter-spacing: 1.5px;
@@ -74,14 +72,14 @@ const image = computed(() => `https://image.tmdb.org/t/p/original${props.poster}
     transition: all 0.2s ease-in;
 
     &:hover {
-      color: #11b980;
+      color: $color-success;
     }
   }
 
   &__subtitle {
-    color: #9e9e9e;
     height: $dim-xxlarge;
     font-size: $dim-normal;
+    color: $color-secondary;
   }
 
   &--text {
@@ -109,14 +107,14 @@ const image = computed(() => `https://image.tmdb.org/t/p/original${props.poster}
 
     &-created {
       font-size: $dim-normal;
-      color: #a8a8a8;
+      color: $color-secondary;
     }
   }
 
   &__avatar {
-    width: 48px;
-    height: 48px;
     border-radius: 50%;
+    width: $dim-xxlarge;
+    height: $dim-xxlarge;
   }
 }
 </style>

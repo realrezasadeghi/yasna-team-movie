@@ -53,9 +53,9 @@ const onClickLogout = () => {
 
   &__body {
     width: auto;
-    background: #fff;
     gap: $dim-normal;
     position: relative;
+    background: $color-white;
     padding: $spacing-normal;
     border-radius: $dim-small;
     box-shadow: 0 0 10px -8px rgb(13 28 39 / 60%);
@@ -70,7 +70,7 @@ const onClickLogout = () => {
   }
 
   &__title {
-    color: #11b980;
+    color: $color-success;
     text-align: center;
   }
 
@@ -82,12 +82,12 @@ const onClickLogout = () => {
 
   &__logout {
     border: none;
-    color: white;
+    color: $color-white;
     opacity: 0.8;
     cursor: pointer;
     letter-spacing: 2px;
     text-transform: uppercase;
-    background-color: orangered;
+    background-color: $color-danger;
     border-radius: $dim-xxsmall;
     padding: $dim-small $dim-xlarge;
     transition: opacity 0.2s ease-in;

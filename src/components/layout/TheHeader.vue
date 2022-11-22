@@ -48,7 +48,7 @@ const menus = computed<NavbarType[]>(() => {
 <style scoped lang="scss">
 .header {
   width: 100%;
-  background-color: #11b980;
+  background-color: $color-success;
   padding: $spacing-small $spacing-xxlarge;
 
   &__nav {
@@ -56,13 +56,13 @@ const menus = computed<NavbarType[]>(() => {
     @include flex(row, center, space-between);
 
     &-link {
-      color: white;
+      color: $color-white;
       text-decoration: none;
     }
 
     &--brand {
-      color: white;
       font-weight: bold;
+      color: $color-white;
       letter-spacing: 1px;
       font-size: $dim-large;
     }
