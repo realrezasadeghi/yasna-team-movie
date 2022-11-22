@@ -1,14 +1,29 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useStore } from 'vuex'
 import { NavbarType } from '@/core'
+import { InformationStore } from '@/store/modules/user/interface'
 
-const menus: NavbarType[] = [
-  {
-    label: 'Login',
-    link: '/login',
-    hidden: false,
-    key: 'login'
-  }
-]
+const store = useStore()
+const user = computed<InformationStore>(() => store.getters.getInformation)
+const isAuthenticated = computed<boolean>(() => store.getters.getIsAuthenticated)
+
+const menus = computed<NavbarType[]>(() => {
+  const username = user?.value?.username
+  return [
+    {
+      label: 'Login',
+      link: '/login',
+      hidden: isAuthenticated.value
+    },
+    {
+      link: '/account',
+      label: username ?? '',
+      hidden: !isAuthenticated.value
+    }
+  ]
+})
+
 </script>
 
 <template>

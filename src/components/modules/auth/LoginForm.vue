@@ -4,16 +4,22 @@ import { useStore } from 'vuex'
 import { LoginInterfaceDto } from '@/api'
 import BaseTextField from '@/components/base/BaseTextField.vue'
 import { useCreateSessionIdAPI, useGetRequestTokenAPI, useLoginAPI } from '@/composables'
+import { useRouter } from 'vue-router'
 
 const user = reactive<LoginInterfaceDto>({
-  username: '',
-  password: '',
+  username: 'rezasadeghi',
+  password: 'reza1234',
   request_token: ''
 })
 const store = useStore()
+const router = useRouter()
 
 const { mutate: createSessionId } = useCreateSessionIdAPI({
   onSuccess: (data) => {
+    router.push({
+      path: '/account',
+      replace: true
+    })
     store.dispatch('addSessionId', { sessionId: data.session_id })
   }
 })

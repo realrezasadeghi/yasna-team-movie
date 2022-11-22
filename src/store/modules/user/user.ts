@@ -8,7 +8,8 @@ import { actions } from './actions'
 import { mutations } from './mutations'
 
 const state: UserState = {
-  sessionId: '',
+  sessionId: null,
+  information: null,
   isAuthenticated: false
 }
 export const KEY_USER_STORE: InjectionKey<Store<UserState>> = Symbol('')
