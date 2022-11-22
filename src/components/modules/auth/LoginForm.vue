@@ -69,14 +69,14 @@ const onSubmitLogin = () => {
 
   &__submit {
     border: none;
-    color: #FFFFFF;
-    font-size: 12px;
+    font-size: $dim-small;
     cursor: pointer;
     letter-spacing: 2px;
+    color: $color-white;
     border-radius: $dim-large;
-    background-color: #11b980;
     text-transform: uppercase;
     transition: all 0.2s ease-in;
+    background-color: $color-success;
     padding: $spacing-xsmall $spacing-xlarge;
 
     &:hover {
