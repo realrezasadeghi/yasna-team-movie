@@ -7,12 +7,6 @@ const menus: NavbarType[] = [
     link: '/login',
     hidden: false,
     key: 'login'
-  },
-  {
-    label: 'Register',
-    link: '/register',
-    hidden: false,
-    key: 'register'
   }
 ]
 </script>
@@ -63,6 +57,7 @@ const menus: NavbarType[] = [
       border-radius: $dim-xxsmall;
       transition: all 0.17s ease-in;
       padding: $spacing-small $spacing-normal;
+
       &:hover {
         background-color: rgba(255, 255, 255, 0.2);
       }
